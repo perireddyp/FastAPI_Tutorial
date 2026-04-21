@@ -17,6 +17,7 @@ jobs:
         run: docker build -t fastapi-app .
 
       - name: Run Container
+        shell: bash
         run: |
           docker stop fastapi-app || true
           docker rm fastapi-app || true
