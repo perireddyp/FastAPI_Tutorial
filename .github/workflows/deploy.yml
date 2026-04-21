@@ -18,6 +18,6 @@ jobs:
 
       - name: Run Container
         run: |
-          docker stop fastapi-app || true
-          docker rm fastapi-app || true
+          docker stop fastapi-app -ErrorAction SilentlyContinue
+          docker rm fastapi-app -ErrorAction SilentlyContinue
           docker run -d -p 8000:8000 --name fastapi-app fastapi-app
